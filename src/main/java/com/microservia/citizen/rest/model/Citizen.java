@@ -1,4 +1,4 @@
-package com.example.citizen.rest.model;
+package com.microservia.citizen.rest.model;
 
 import java.time.Instant;
 

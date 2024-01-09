@@ -1,4 +1,4 @@
-package com.example.citizen.rest.resource;
+package com.microservia.citizen.rest.resource;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
