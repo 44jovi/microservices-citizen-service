@@ -32,7 +32,7 @@
     </dependencies>
 
     <build>
-        <finalName>citizen-service</finalName>
+        <finalName>service-citizen</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
