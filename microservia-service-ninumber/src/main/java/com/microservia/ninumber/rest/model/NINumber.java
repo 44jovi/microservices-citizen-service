@@ -2,20 +2,21 @@ package com.microservia.ninumber.rest.model;
 
 public class NINumber {
 
-  private String nin;
+  private String nINumber;
 
   @Override
   public String toString() {
     return "NINumber{" +
-        "nin='" + nin + '\'' +
+        "nINumber='" + nINumber + '\'' +
         '}';
   }
 
-  public String getNin() {
-    return nin;
+  public String getNINumber() {
+    return nINumber;
   }
 
-  public void setNin(String nin) {
-    this.nin = nin;
+  public void setNINumber(String nINumber) {
+    this.nINumber = nINumber;
   }
+
 }
