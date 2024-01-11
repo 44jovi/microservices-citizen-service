@@ -32,7 +32,7 @@
     </dependencies>
 
     <build>
-        <finalName>microservia-service-ninumber</finalName>
+        <finalName>service-ninumber</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
