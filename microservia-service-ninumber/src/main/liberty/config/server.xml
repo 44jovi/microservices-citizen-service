@@ -35,7 +35,7 @@
     <applicationManager autoExpand="true"/>
 
     <!-- Configures the application on a specified context root -->
-    <webApplication contextRoot="/service-citizen" location="service-citizen.war" />
+    <webApplication contextRoot="/microservia-service-ninumber" location="microservia-service-ninumber.war" />
 
     <!-- Default SSL configuration enables trust for default certificates from the Java runtime -->
     <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
