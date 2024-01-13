@@ -34,6 +34,8 @@
     <!-- Automatically expand WAR files and EAR files -->
     <applicationManager autoExpand="true"/>
 
+    <variable name="ninumber.proxy/mp-rest/url" value="http://localhost:9081/service-ninumber"/>
+
     <!-- Configures the application on a specified context root -->
     <webApplication contextRoot="/service-citizen" location="service-citizen.war" />
 
