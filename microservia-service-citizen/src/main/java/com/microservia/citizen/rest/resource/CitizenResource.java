@@ -1,6 +1,7 @@
 package com.microservia.citizen.rest.resource;
 
 import com.microservia.citizen.rest.model.Citizen;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.GET;
@@ -10,15 +11,21 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.io.IOException;
 import java.time.Instant;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 @Path("/register")
 public class CitizenResource {
 
+  @Inject
+  @RestClient
+  NINumberProxy nINumberProxy;
+
   @GET
   @Produces(MediaType.TEXT_PLAIN)
   public String getCitizen() {
-    return "Hello - I am a WIP.";
+    return "Microservia - Citizen Service";
   }
 
   @POST
@@ -27,14 +34,21 @@ public class CitizenResource {
   public Response registerCitizen(
       @FormParam("givenName") String givenName,
       @FormParam("familyName") String familyName,
-      @FormParam("dob") String dob) {
+      @FormParam("dob") String dob) throws IOException {
 
     Citizen citizen = new Citizen();
 
     citizen.setGivenName(givenName);
     citizen.setFamilyName(familyName);
     citizen.setDob(Instant.parse(dob));
-    citizen.setNINumber("NI number generation WIP");
+
+    try {
+      citizen.setNINumber(nINumberProxy.getNINumber().nINumber);
+    } catch (Exception e) {
+      System.err.println(e.getMessage());
+    } finally {
+      nINumberProxy.close();
+    }
 
     return Response.status(201).entity(citizen).build();
   }
